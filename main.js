@@ -1,7 +1,6 @@
-
 const inputHold = document.getElementById("inputHold");
 const catagoryName = document.getElementById("catagoryName");
-const playerLives  = document.getElementById('playerLives')
+const playerLives = document.getElementById("playerLives");
 const options = [
   "a",
   "b",
@@ -31,32 +30,33 @@ const options = [
   "z"
 ];
 const words = [
-  "html",
-  "javascript",
-  "cascading style sheet",
+  "yoshi",
+  "toad",
+  "princess peach",
   "mario",
   "luigi",
   "browser"
 ];
 
-var optionChoices = function(){
-     alphabetButtons = document.getElementById("buttons")
-    alphaList = document.createElement('ul')
-    for (let i = 0; i < alphabet.length; i++){
-        alphaList.setAttribute('id', 'alphabet')
-        list = document.createElement('li')
-        //We are adding the <li> to the dom
-        list.setAttribute('id', 'letter')
-// were adding an id to the list items.
-        list.innerHTML = options[i]
-        //now im adding the alphabet letters to the list items
-        list.addEventListener('click', buttonClick)
+var optionChoices = function() {
+  alphabetButtons = document.getElementById("buttons");
+  alphaList = document.createElement("ul");
+  alphaList.setAttribute("id", "alphabet");
+  for (let i = 0; i < options.length; i++) {
+    var list = document.createElement("li");
+    //We are adding the <li> to the dom
+    list.setAttribute("id", 'abc');
+    // were adding an id to the list items.
+    list.innerHTML = options[i];
+    //now im adding the alphabet letters to the list items
+    alphaList.appendChild(list);
+  }
+  alphabetButtons.appendChild(alphaList);
+};
+optionChoices()
 
-    }
-}
 
-let buttonClick = function(evt){
-    evt.preventDefault()
-    
 
-}
+
+
+
