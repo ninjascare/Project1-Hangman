@@ -1,6 +1,8 @@
 const inputHold = document.getElementById("inputHold");
 const catagoryName = document.getElementById("catagoryName");
 const playerLives = document.getElementById("playerLives");
+var word;
+const correct = [];
 const options = [
   "a",
   "b",
@@ -29,7 +31,7 @@ const options = [
   "y",
   "z"
 ];
-const words = ["yoshi", "toad", "princess peach", "mario", "luigi", "browser"];
+// const words = ["yoshi", "toad", "princess peach", "mario", "luigi", "browser"];
 
 var optionChoices = function() {
   alphabetButtons = document.getElementById("buttons");
@@ -48,28 +50,75 @@ var optionChoices = function() {
 };
 optionChoices();
 
-check = function(){
-    list.onclick = function(){
-        var attempt = this.innerHTML
-        this.setAttribute('class', 'active')
-        this.onclick = 0
-        for(let i = 0; i < words.length; i++) {
-            if(words[i]  === attempt){
-                guesses
-            }
-        }
-
+check = function() {
+  list.onclick = function() {
+    var attempt = this.innerHTML;
+    this.setAttribute("class", "active");
+    this.onclick = 0;
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === attempt) {
+        correct[i].innerHTML = attempt;
+      }
     }
-}
-var word = words[Math.floor(Math.random() * words.length)];
 
-function guess() {
-  let answer = [];
-  for (var i = 0; i < words.length; i++) {
-    answer[i] = "_";
-    inputHold.innerHTML
-  }
-  return answer
-}
+    var k = word.indexOf(attempt);
+    if (k === -1) {
+      playerLives -= 1;
+    }
+  };
+};
 
-  var remainingLetters = words.length;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var word = words[Math.floor(Math.random() * words.length)];
+
+// function guess() {
+//   let answer = [];
+//   for (var i = 0; i < words.length; i++) {
+//     answer[i] = "_";
+//     inputHold.innerHTML
+//   }
+//   return answer
+// }
+
+//   var remainingLetters = words.length;
